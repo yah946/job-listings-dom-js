@@ -347,24 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         saveFavorites();
         renderFavoritesCount();
-
-        const activeTab = document.querySelector('.tab-item--active');
-        if (activeTab && activeTab.dataset.tab === 'favorites') {
-            renderFavoriteJobs();
-        } else {
-            renderJobs(allJobs);
-        }
 };
-
-document.addEventListener('click', (e) => {
-    const favBtn = e.target.closest('.job-card__favorite-btn');
-    if (favBtn) {
-        e.stopPropagation();
-        const jobId = favBtn.dataset.jobId;
-        toggleFavorite(jobId);
-    }
-});
-
 
     // ------------------------------------
     // --- TAB NAVIGATION ---
